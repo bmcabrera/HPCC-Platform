@@ -7,8 +7,8 @@ from io import BytesIO
 from zipfile import ZipFile
 
 
-REPO_OWNER = os.getenv('REPO_OWNER')
-REPO_NAME = os.getenv('REPO_NAME')
+REPO_OWNER = os.getenv('REPO_OWNER','hpcc-systems')
+REPO_NAME = os.getenv('REPO_NAME','HPCC-Platform')
 TAG = os.getenv('TAG')
 
 url = f'https://api.github.com/repos/{REPO_OWNER}/{REPO_NAME}/releases/tags/{TAG}'
