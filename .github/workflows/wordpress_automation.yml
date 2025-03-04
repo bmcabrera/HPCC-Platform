@@ -20,7 +20,7 @@ jobs:
         with:
           repository: hpcc-systems/HPCC-Platform
           ref: 'master'
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GH_TOKEN }}
           submodules: recursive
           clean: false
 
@@ -42,4 +42,5 @@ jobs:
           HOSTNAME: ${{ secrets.WORDPRESS_HOSTNAME }}
           USERNAME: ${{ secrets.WORDPRESS_USERNAME }}
           PASSWORD: ${{ secrets.WORDPRESS_PASSWORD }}
+          PORT: ${{ secrets.WORDPRESS_PORT }}
           
