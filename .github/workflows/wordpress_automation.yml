@@ -18,7 +18,7 @@ jobs:
       - name: Checkout HPCC-Platform
         uses: actions/checkout@v4
         with:
-          repository: hpcc-systems/HPCC-Platform
+          repository: ${{ github.repository_owner }}/HPCC-Platform
           ref: 'master'
           token: ${{ secrets.GH_TOKEN }}
           submodules: recursive
