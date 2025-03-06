@@ -33,7 +33,7 @@ jobs:
       
       - name: Transfer to Wordpress
         run: |
-           python3 ./HPCC-Platform/build_utils/build_file_transfer/builds_file_transfer.py
+           python3 ./build_utils/build_file_transfer/builds_file_transfer.py
         shell: bash
         env:
           REPO_OWNER: ${{ github.repository_owner }}
