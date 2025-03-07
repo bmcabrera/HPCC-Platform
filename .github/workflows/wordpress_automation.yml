@@ -15,14 +15,16 @@ jobs:
   generate-asset-manifest:
     runs-on: ubuntu-latest
     steps:
-    
+
+      # Look into checking out only HPCC-Platform/build_utils/builds_file_transfer directory
       - name: Checkout HPCC-Platform
         uses: actions/checkout@v4
         with:
           repository: ${{ github.repository_owner }}/HPCC-Platform
           ref: 'master'
-          files: build_utils/builds_file_transfer
-          clean: false  
+          token: ${{ secrets.GH_TOKEN }}
+          submodules: recursive
+          clean: false
 
       - name: Install Python
         run: |
@@ -33,7 +35,7 @@ jobs:
       
       - name: Transfer to Wordpress
         run: |
-           python3 HPCC-Platform/build_utils/build_file_transfer/builds_file_transfer.py
+           python3 build_utils/build_file_transfer/builds_file_transfer.py
         shell: bash
         env:
           REPO_OWNER: ${{ github.repository_owner }}
