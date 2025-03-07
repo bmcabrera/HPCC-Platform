@@ -23,7 +23,6 @@ jobs:
           repository: ${{ github.repository_owner }}/HPCC-Platform
           ref: 'master'
           token: ${{ secrets.GH_TOKEN }}
-          submodules: recursive
           clean: false
 
       - name: Install Python
