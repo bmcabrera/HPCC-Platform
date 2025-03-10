@@ -37,8 +37,8 @@ jobs:
            python3 build_utils/builds_file_transfer/builds_file_transfer.py
         shell: bash
         env:
-          REPO_OWNER: ${{ github.repository_owner }}
-          REPO_NAME: ${{ github.repository.name }}
+          #REPO_OWNER: ${{ secrets.REPO_NAME }}
+          #REPO_NAME: ${{ github.event.repository.name }}
           TAG: ${{ inputs.tag }}
           HOSTNAME: ${{ secrets.WORDPRESS_HOSTNAME }}
           USERNAME: ${{ secrets.WORDPRESS_USERNAME }}
