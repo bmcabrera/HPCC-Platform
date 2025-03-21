@@ -848,3 +848,11 @@ jobs:
             ${{ needs.preamble.outputs.folder_prettygitlogs }}/community_${{ steps.get_version.outputs.current_version }}.html
             ${{ needs.preamble.outputs.folder_prettygitlogs }}/internal_${{ steps.get_version.outputs.current_version }}.html
             ${{ needs.preamble.outputs.folder_prettygitlogs }}/eclide_${{ steps.get_version.outputs.current_version }}.html
+  
+  deploy_wordpress:
+    needs: preamble
+    if: ${{ needs.preamble.outputs.is_latest }}
+    uses: ./.github/actions/wordpress_automation.yml
+    with:
+      tag: ${{ needs.preamble.outputs.community_tag }}
+    secrets: inherit

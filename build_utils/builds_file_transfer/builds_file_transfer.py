@@ -19,10 +19,7 @@ release = response.json()
 
 # Handle multiple releases, assuming the assets are spread across them
 assets = []
-if release['tag_name'].endswith('-1'):
-    assets.extend(release['assets'])
-else:
-    exit(0)
+assets.extend(release['assets'])
 
 def download_and_unzip(url, extract_to='.'):
     zip_url = urlopen(url)
