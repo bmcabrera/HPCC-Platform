@@ -852,7 +852,7 @@ jobs:
   deploy_wordpress:
     needs: preamble
     if: ${{ needs.preamble.outputs.is_latest }}
-    uses: ./.github/actions/wordpress_automation.yml
+    uses: ./.github/workflows/wordpress_automation.yml
     with:
       tag: ${{ needs.preamble.outputs.community_tag }}
     secrets: inherit
