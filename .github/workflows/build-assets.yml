@@ -851,7 +851,7 @@ jobs:
   
   deploy_wordpress:
     needs: build-docker
-    if: ${{ needs.preamble.outputs.is_latest }}
+    #if: ${{ needs.preamble.outputs.is_latest }}
     uses: ./.github/workflows/wordpress_automation.yml
     with:
       tag: ${{ needs.preamble.outputs.community_tag }}
