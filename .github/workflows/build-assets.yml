@@ -850,7 +850,7 @@ jobs:
             ${{ needs.preamble.outputs.folder_prettygitlogs }}/eclide_${{ steps.get_version.outputs.current_version }}.html
   
   deploy_wordpress:
-    needs: build-docker
+    needs: [preamble, build-docker]
     #if: ${{ needs.preamble.outputs.is_latest }}
     uses: ./.github/workflows/wordpress_automation.yml
     with:
